@@ -13,31 +13,31 @@ public class CaesarCipher {
             System.out.println("4. Exit");
             System.out.print("Enter your choice (1/2/3/4): ");
             int choice = sc.nextInt();
-            sc.nextLine();  // Consume newline
+            sc.nextLine();
 
             switch (choice) {
                 case 1:
-                    // Call encryption function
+                    // Calling encryption function
                     System.out.print("Enter plaintext: ");
                     String plaintext = sc.nextLine();
                     System.out.print("Enter key: ");
                     int key = sc.nextInt();
-                    sc.nextLine();  // Consume newline
+                    sc.nextLine();
                     String encrypted = encrypt(plaintext, key);
                     System.out.println("Ciphertext: " + encrypted);
                     break;
                 case 2:
-                    // Call decryption function
+                    // Calling decryption function
                     System.out.print("Enter ciphertext: ");
                     String ciphertext = sc.nextLine();
                     System.out.print("Enter key: ");
                     key = sc.nextInt();
-                    sc.nextLine();  // Consume newline
+                    sc.nextLine();
                     String decrypted = decrypt(ciphertext, key);
                     System.out.println("Decrypted text: " + decrypted);
                     break;
                 case 3:
-                    // Call brute force attack function
+                    // Calling brute force attack function
                     System.out.print("Enter ciphertext: ");
                     ciphertext = sc.nextLine();
                     bruteForceAttack(ciphertext);
@@ -63,7 +63,7 @@ public class CaesarCipher {
                 char encryptedChar = (char) ((c - base + key) % 26 + base);
                 result.append(encryptedChar);
             } else {
-                result.append(c);  // Keep non-letters unchanged
+                result.append(c);
             }
         }
         return result.toString();
@@ -71,7 +71,7 @@ public class CaesarCipher {
 
     // Decryption function
     public static String decrypt(String text, int key) {
-        return encrypt(text, 26 - key);  // Reuse the encrypt method by inverting the key
+        return encrypt(text, 26 - key);  // Reusing the encrypt method by inverting the key
     }
 
     // Brute force attack function
